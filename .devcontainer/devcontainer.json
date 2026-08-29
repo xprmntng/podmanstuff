@@ -31,7 +31,5 @@
         "rust-lang.rust-analyzer"
       ]
     }
-  },
-  // Which user to enter the container as
-  "remoteUser": "root"
+  }
 }
