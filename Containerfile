@@ -5,7 +5,8 @@ RUN rm -rf /root/buildinfo
 
 RUN microdnf update -y \
  && microdnf install -y git \
-                        openssh-clients \
                         cargo \
                         tar
 
+# Copy Bash configuration
+COPY bashrc /root/.bashrc
