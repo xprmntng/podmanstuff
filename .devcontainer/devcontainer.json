@@ -1,0 +1,35 @@
+{
+  "name": "Rust",
+  "image": "fun",
+  "mounts": [
+    // Mount a named volume that will cache crates downloaded from Cargo registries
+    "source=global-cargo-registry-cache,target=/root/.cargo/registry,type=volume",
+    // Mount a named volume that will cache crates downloaded directly from remote Git repositories
+    "source=global-cargo-git-cache,target=/root/.cargo/git,type=volume",
+    // Mount a named volume that will cache the project's local build cache
+    // This speeds up builds slightly
+    "source=local-cargo-target-cache-${localWorkspaceFolderBasename},target=/root/workspace/target,type=volume",
+    // Mount the user's saved Cargo credentials file
+    "source=${localEnv:HOME}/.cargo/credentials.toml,target=/root/.cargo/credentials.toml,type=bind,readonly"
+  ],
+  // Which directory the container should start in
+  "workspaceFolder": "/root/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/root/workspace,type=bind",
+  // Arguments to pass to `podman run` (currently none)
+  "runArgs": [],
+  // Set environment variables inside the container
+  "containerEnv": {
+    // Tell Cargo where to look for its configuration files and download caches
+    "CARGO_HOME": "/root/.cargo"
+  },
+  // Which VS Code extension the Dev Containers extension should install into the container
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer"
+      ]
+    }
+  },
+  // Which user to enter the container as
+  "remoteUser": "root"
+}
