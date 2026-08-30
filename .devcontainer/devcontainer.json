@@ -29,7 +29,12 @@
     "vscode": {
       "extensions": [
         "rust-lang.rust-analyzer"
-      ]
+      ],
+      "settings": {
+        "rust-analyzer.check.command": "clippy"
+      }
     }
-  }
+  },
+  // Install local project dependencies after the container image is built
+  "postCreateCommand": "cargo fetch"
 }
