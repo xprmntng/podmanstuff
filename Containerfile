@@ -7,6 +7,7 @@ RUN microdnf update -y \
  && microdnf install -y git \
                         cargo \
                         clippy \
+                        rust-src \
                         tar \
  && microdnf clean all \
  && rm -rf /var/cache/dnf /var/tmp/* /tmp/*
