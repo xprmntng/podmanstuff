@@ -14,4 +14,4 @@ podman run -it \
            --mount source=global-cargo-git-cache,target=/root/.cargo/git,type=volume \
            --mount source=local-cargo-target-cache-"$cwd_name",target=/root/workspace/target,type=volume \
            --env CARGO_HOME=/root/.cargo \
-           -- fun bash
+           -- rust-toolchain bash
