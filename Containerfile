@@ -7,7 +7,7 @@ RUN microdnf update -y \
  && microdnf install -y git \
                         cargo \
                         tar \
- && dnf clean all \
+ && microdnf clean all \
  && rm -rf /var/cache/dnf /var/tmp/* /tmp/*
 
 # Copy Bash configuration
