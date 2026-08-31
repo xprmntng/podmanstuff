@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-podman build --tag fun .
+podman build --target toolchain --tag rust-toolchain .

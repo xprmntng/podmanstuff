@@ -1,6 +1,6 @@
 {
   "name": "Rust",
-  "image": "fun",
+  "image": "rust-toolchain",
   "mounts": [
     // Mount a named volume that will cache crates downloaded from Cargo registries
     "source=global-cargo-registry-cache,target=/root/.cargo/registry,type=volume",
