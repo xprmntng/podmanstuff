@@ -31,7 +31,8 @@
         "rust-lang.rust-analyzer"
       ],
       "settings": {
-        "rust-analyzer.check.command": "clippy"
+        "rust-analyzer.check.command": "clippy",
+        "rust-analyzer.cargo.sysrootSrc": "/usr/lib/rustlib/src/rust/library"
       }
     }
   },
